@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>faq</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* 重置默认样式 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            position: relative; /* 添加定位上下文 */
+        }
+        .b_1 {
+            width: 100%;
+            height: 14vh;
+            background-color: #FFFFFF;
+        }
+        .b_2{
+            width:100%;
+            height: 86vh;
+            background-image: url("/ec-glass-website/public/images/5_1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative; /* 添加定位上下文 */
+        }
+        /* 新增容器样式 */
+        .content-overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .content-overlay-2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .w_1{
+            color: #004AAD;
+            font-family: "Inknut Antiqua", serif;
+            font-size: 36px;
+            font-weight: 800;
+            position: absolute; /* 绝对定位 */
+            top: 5%;
+            left: 5%;
+            z-index: 10;
+        }
+        /* 其他文字样式调整 */
+        .w_2{
+            color: #004AAD;
+            font-family: "Inspiration", serif;
+            font-size: 32px;
+        }
+        .w_3{
+            color: #4B4A4A;
+            font-family: "Inspiration", serif;
+            font-size: 32px;
+            cursor: pointer;
+        }
+        .w_4{
+            color: #063B82;
+            font-family: "STKaiti", serif;
+            font-size: 96px;
+            position: absolute;
+        }
+        .w_5{
+            color: #343333;
+            font-family: "FZSongKeBenXiuKaiS-R-GB", serif;
+            font-size: 40px;
+            position: absolute;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            margin: 0 auto;
+            position: absolute;
+            right: 0;
+            top: 40%;
+            transform: translateY(-25%);
+        }
+        .nav-item {
+            flex: 1;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 5%;
+            z-index: 5;
+        }
+        .title-1 {
+            left: 13%;
+            top: 18%;
+        }
+        .title-2 {
+            left: 15%;
+            top: 20%;
+        }
+        .title-3 {
+            left: 15%;
+            top: 40%;
+        }
+        a {
+            text-decoration: none; /* 移除下划线 */
+            color: inherit; /
+        }
+        .svg-wrapper {
+            left: -44px;
+            top: 130px;
+            position: absolute;
+        }
+        /* 答案框样式 */
+        .answer-box {
+            width: 844px;
+            height: 223px;
+            left: 61px;
+            top: 747px;
+            position: absolute;
+            background: #F2F1F1;
+            border-radius: 22px;
+        }
+        .question {
+            width: 844px;
+            height: 82px;
+            padding: 10px;
+            position: absolute;
+            background: white;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        /* 问题文本样式 */
+        .question-text {
+            color: #004AAD;
+            font-size: 36px;
+            font-family: Inknut Antiqua;
+            font-weight: 800;
+            word-wrap: break-word;
+        }
+        /* 展开符号样式 */
+        .expand-symbol {
+            position: absolute;
+            color: #004AAD;
+            font-size: 64px;
+            font-family: Inter;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        /* 大标题样式 */
+        .big-title {
+            left: 697px;
+            top: 130px;
+            position: absolute;
+            color: #FFFFFF;
+            font-size: 80px;
+            font-family: Inknut Antiqua;
+            font-weight: 800;
+            word-wrap: break-word;
+        }
+        /* 描述文本样式 */
+        .description {
+            width: 737px;
+            left: 114px;
+            top: 818px;
+            position: absolute;
+            color: black;
+            font-size: 32px;
+            font-family: FZSongKeBenXiuKaiS-R-GB;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="b_1">
+        <div class="content-overlay">
+            <img class="logo" src="/ec-glass-website/public/images/1_1.png" alt="加载错误" title="图标">
+            <div class="w_1 title-1">电致变色玻璃</div>
+            <div class="nav-container">
+                <div class="w_3 nav-item"><a href="/ec-glass-website/public/webs/index.html">首页</a></div>
+                <div class="w_3 nav-item"><a href="/ec-glass-website/public/webs/introduce.html">产品介绍</a></div>
+                <div class="w_3 nav-item"><a href="/ec-glass-website/public/webs/advantage.html">产品优势</a></div>
+                <div class="w_3 nav-item"><a href="/ec-glass-website/public/webs/application.html">应用场景</a></div>
+                <div class="w_2 nav-item"><a href="/ec-glass-website/public/webs/faq.html">FAQ</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="b_2">
+    <div class="content-overlay-2">
+    <div class="question" style="left: 61px; top: 366px;">
+        <div><span class="question-text">电致变色玻璃的变色稳定性如何？</span></div>
+    </div>
+    <div class="question" style="left: 976px; top: 366px;">
+        <div><span class="question-text">电致变色玻璃的变色稳定性如何？</span></div>
+    </div>
+    <div class="question" style="left: 61px; top: 478px;">
+        <div class="question-text">电致变色玻璃的储能功能如何工作？</div>
+    </div>
+    <div class="question" style="left: 976px; top: 478px;">
+        <div class="question-text">电致变色玻璃的储能功能如何工作？</div>
+    </div>
+    <div class="question" style="left: 61px; top: 590px;">
+        <div class="question-text">如何购买和安装电致变色玻璃？</div>
+    </div>
+    <div class="question" style="left: 976px; top: 590px;">
+        <div class="question-text">如何购买和安装电致变色玻璃？</div>
+    </div>
+    <div class="question" style="left: 61px; top: 702px;">
+        <div class="question-text">电致变色玻璃如何提高车内的安全性？</div>
+    </div>
+    <div class="question" style="left: 976px; top: 702px;">
+        <div class="question-text">电致变色玻璃如何提高车内的安全性？</div>
+    </div>
+    <div class="question" style="left: 976px; top: 814px;">
+        <div class="question-text">电致变色玻璃如何提高车内的安全性？</div>
+    </div>
+    <div class="big-title">常见问题解答</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>产品介绍</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* 重置默认样式 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            position: relative; /* 添加定位上下文 */
+        }
+        .b_1 {
+            width: 100%;
+            height: 14vh;
+            background-color: #FFFFFF;
+        }
+        .b_2{
+            width:100%;
+            height: 86vh;
+            background-image: url("/ec-glass-website/public/images/1_2.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative; /* 添加定位上下文 */
+        }
+        /* 新增容器样式 */
+        .content-overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .content-overlay-2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .w_1{
+            color: #004AAD;
+            font-family: "Inknut Antiqua", serif;
+            font-size: 36px;
+            font-weight: 800;
+            position: absolute; /* 绝对定位 */
+            top: 5%;
+            left: 5%;
+            z-index: 10;
+        }
+        /* 其他文字样式调整 */
+        .w_2{
+            color: #004AAD;
+            font-family: "Inspiration", serif;
+            font-size: 32px;
+        }
+        .w_3{
+            color: #4B4A4A;
+            font-family: "Inspiration", serif;
+            font-size: 32px;
+            cursor: pointer;
+        }
+        .w_4{
+            color: #063B82;
+            font-family: "STKaiti", serif;
+            font-size: 96px;
+            position: absolute;
+        }
+        .w_5{
+            color: #343333;
+            font-family: "FZSongKeBenXiuKaiS-R-GB", serif;
+            font-size: 40px;
+            position: absolute;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            margin: 0 auto;
+            position: absolute;
+            right: 0;
+            top: 40%;
+            transform: translateY(-25%);
+        }
+        .nav-item {
+            flex: 1;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 5%;
+            z-index: 5;
+        }
+        .title-1 {
+            left: 13%;
+            top: 18%;
+        }
+        .title-2 {
+            left: 15%;
+            top: 20%;
+        }
+        .title-3 {
+            left: 15%;
+            top: 40%;
+        }
+        a {
+            text-decoration: none; /* 移除下划线 */
+            color: inherit; /
+        }
+        .tech-principle-title {
+            left: 495px;
+            top: 113px;
+            position: absolute;
+            color: #004AAD;
+            font-size: 48px;
+            font-family: Inknut Antiqua;
+            font-weight: 800;
+            word-wrap: break-word;
+        }
+        .section-title {
+            left: 495px;
+            top: 113px;
+            position: absolute;
+            color: #004AAD;
+            font-size: 48px;
+            font-family: Inknut Antiqua;
+            font-weight: 800;
+            word-wrap: break-word;
+        }
+        /* 子标题通用样式 */
+        .sub-title {
+            position: absolute;
+            color: black;
+            font-size: 32px;
+            font-family: Inknut Antiqua;
+            font-weight: 800;
+            word-wrap: break-word;
+        }
+        /* 电致变色技术子标题样式 */
+        .electrochromic-title {
+            left: 787px;
+            top: 206px;
+        }
+        /* 高效储能技术子标题样式 */
+        .energy-storage-title {
+            left: 787px;
+            top: 729px;
+        }
+        /* 电致变色技术图片样式 */
+        .electrochromic-image {
+            width: 325px;
+            height: 325px;
+            left: 428px;
+            top: 325px;
+            position: absolute;
+            border-radius: 79px;
+        }
+        /* 电致变色技术描述样式 */
+        .electrochromic-description {
+            width: 1027px;
+            left: 787px;
+            top: 284px;
+            position: absolute;
+            color: black;
+            font-size: 32px;
+            font-family: STKaiti;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        .description-2 {
+            width: 1027px;
+            left: 787px;
+            top: 800px;
+            position: absolute;
+            color: black;
+            font-size: 32px;
+            font-family: STKaiti;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        /* 分隔线样式 */
+        .separator {
+            width: 1442.04px;
+            height: 0px;
+            left: 428px;
+            top: 729px;
+            position: absolute;
+            border: 1px #989797 solid;
+        }
+        /* 高效储能技术图片样式 */
+        .energy-storage-image {
+            width: 245px;
+            height: 245px;
+            left: 468px;
+            top: 835px;
+            position: absolute;
+            border-radius: 27px;
+        }
+        /* 目录头部样式 */
+        .catalog-header {
+            width: 319px;
+            height: 59px;
+            left: 46px;
+            top: 189px;
+            position: absolute;
+            background: #004AAD;
+        }
+        /* 目录标题样式 */
+        .catalog-title {
+            left: 67px;
+            top: 172px;
+            position: absolute;
+            color: white;
+            font-size: 36px;
+            font-family: Inknut Antiqua;
+            font-weight: 800;
+            word-wrap: break-word;
+        }
+        /* 目录内容样式 */
+        .catalog-content {
+            width: 319px;
+            height: 561px;
+            left: 46px;
+            top: 248px;
+            position: absolute;
+            background: #D9D9D9;
+        }
+        /* 目录项通用样式 */
+        .catalog-item {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 26px;
+            padding-right: 173px;
+            position: absolute;
+            justify-content: flex-start;
+            align-items: center;
+            display: inline-flex;
+        }
+        /* 电致变色技术目录项样式 */
+        .catalog-electrochromic {
+            left: 46px;
+            top: 334px;
+        }
+        /* 高效储能技术目录项样式 */
+        .catalog-energy-storage {
+            left: 46px;
+            top: 370px;
+        }
+        /* 目录项文本样式 */
+        .catalog-item-text {
+            color: black;
+            font-size: 20px;
+            font-family: STKaiti;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        /* 目录部分标题通用样式 */
+        .catalog-section-title {
+            left: 72px;
+            position: absolute;
+            color: black;
+            font-size: 32px;
+            font-family: FZSongKeBenXiuKaiS-R-GB;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        /* 技术原理目录部分标题样式 */
+        .catalog-tech-principle {
+            top: 255px;
+            position: absolute;
+        }
+        /* 组成部分目录部分标题样式 */
+        .catalog-components {
+            top: 388px;
+            position: absolute;
+        }
+        /* 目录分隔线样式 */
+        .catalog-separator {
+            left: 46px;
+            top: 297.50px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="b_1">
+        <div class="content-overlay">
+            <img class="logo" src="/ec-glass-website/public/images/1_1.png" alt="加载错误" title="图标">
+            <div class="w_1 title-1">电致变色玻璃</div>
+            <div class="nav-container">
+                <div class="w_3 nav-item"><a href="/ec-glass-website/public/webs/index.html">首页</a></div>
+                <div class="w_2 nav-item"><a href="/ec-glass-website/public/webs/introduce.html">产品介绍</a></div>
+                <div class="w_3 nav-item"><a href="/ec-glass-website/public/webs/advantage.html">产品优势</a></div>
+                <div class="w_3 nav-item"><a href="/ec-glass-website/public/webs/application.html">应用场景</a></div>
+                <div class="w_3 nav-item"><a href="/ec-glass-website/public/webs/faq.html">FAQ</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="section-title">技术原理</div>
+    <div class="sub-title electrochromic-title">电致变色技术</div>
+    <div class="sub-title energy-storage-title">高效储能技术</div>
+    <img class="electrochromic-image" src="/ec-glass-website/public/images/2_1.png" alt="电致变色技术图片">
+    <div class="electrochromic-description">
+        综述：电致变色技术是一种基于电化学反应的智能玻璃技术。通过施加电压，电致变色玻璃的透明度可以在透明和有色两种状态之间切换，从而实现对可见光和红外光的智能调节。这种技术的核心是利用电致变色材料，如氧化钨（WO3），其在不同电压下能够改变其光学性质。<br/>
+        透明态：当电压施加在电致变色玻璃上时，电致变色材料发生电化学反应，电子和离子在电致变色层中移动，玻璃变得透明，允许最大量的可见光和红外光通过。<br/>
+        着色态：当电压移除或反向施加时，电致变色材料中的电子和离子回到原来的位置，玻璃变得有色，减少可见光和红外光的透过，从而降低车内或室内温度。
+    </div>
+    <div class="separator"></div>
+    <img class="energy-storage-image" src="/ec-glass-website/public/images/2_2.png" alt="高效储能技术图片">
+    <div class="description-2">
+    综述：高效储能技术通过将电致变色玻璃与储能系统集成，使其能够在汽车运行过程中或在蓄电池供电时储存电能。这些储存的电能可以在断电时用于维持电致变色玻璃的着色状态，从而继续减少车内或室内温度，提升安全性和舒适度。<br/>储能过程：在汽车行驶或充电过程中，多余的电能被储存在电致变色玻璃的储能系统中。这些电能可以在需要时释放，以维持玻璃的着色状态。<br/>断电保护：在断电情况下（如停车时），储能系统可以自动供电，确保电致变色玻璃保持在着色状态，持续降低车内温度，保护车内物品和乘客安全。
+    </div>
+    <div class="catalog-header"></div>
+    <div class="catalog-title">目录</div>
+    <div class="catalog-content"></div>
+    <div class="catalog-item" style="left: 45px;top: 300px">
+        <div>电致变色技术</div>
+    </div>
+    <div class="catalog-item" style="left: 45px;top: 340px">
+        <div>高效储能技术</div>
+    </div>
+    <div class="catalog-section-title" style="left: 70px;top: 250px">技术原理</div>
+    <div class="catalog-section-title" style="left: 70px;top: 375px">组成部分</div>
+    <div class="catalog-separator">
+        <svg width="319" height="78" viewBox="0 0 319 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 77H319M0 0.5H319M0 39.5H319" stroke="#FFFDFD"/>
+        </svg>
+    </div>
+</body>
+</html>
