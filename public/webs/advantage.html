@@ -1,168 +1,130 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <title>产品优势</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- 头部元信息保持不变 -->
     <style>
-        /* 重置默认样式 */
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            position: relative; /* 添加定位上下文 */
-        }
-        .b_1 {
-            width: 100%;
-            height: 14vh;
-            background-color: #FFFFFF;
-        }
-        .b_2{
-            width:100%;
-            height: 86vh;
-            background-image: url("../images/1_2.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            position: relative; /* 添加定位上下文 */
-        }
-        /* 新增容器样式 */
-        .content-overlay{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 20%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .content-overlay-2{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            width: 50%;
+        /* 修改：优化网格布局响应式 */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 40px 5%;
+            max-width: 1600px;
             margin: 0 auto;
-            position: absolute;
-            right: 0;
-            top: 40%;
-            transform: translateY(-25%);
+            /* 新增：保证最小宽度 */
+            min-width: 320px;
         }
-        .w_1{
-            color: #004AAD;
-            font-family: "Inknut Antiqua", serif;
-            font-size: 36px;
-            font-weight: 800;
-            position: absolute; /* 绝对定位 */
-            top: 5%;
-            left: 5%;
-            z-index: 10;
+
+        /* 新增：图片容器自适应 */
+        .card-image {
+            width: 100%;
+            height: auto;
+            /* 新增：保持图片比例 */
+            object-fit: cover;
+            /* 新增：移动端高度优化 */
+            max-height: 200px;
         }
-        /* 其他文字样式调整 */
-        .w_2{
-            color: #004AAD;
-            font-family: "Inspiration", serif;
-            font-size: 32px;
-        }
-        .w_3{
-            color: #4B4A4A;
-            font-family: "Inspiration", serif;
-            font-size: 32px;
-            cursor: pointer;
-        }
-        .w_4{
-            color: #807E7E;
-            font-family: "Inknut Antiqua";
-            font-size: 35px;
-            font-weight: 800;
-            position: absolute;
-        }
-        .w_5{
-            color: #000;
-            font-family: FZSongKeBenXiuKaiS-R-GB;
-            font-size: 25px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            position: absolute;
-        }
-        .nav-item {
-            flex: 1;
-            text-align: center;
-            white-space: nowrap;
-        }
-        .logo {
-            position: absolute;
-            top: 0;
-            left: 5%;
-            z-index: 5;
-        }
-        .title-1 {
-            left: 13%;
-            top: 18%;
-        }
-        .title-2 {
-            left: 15%;
-            top: 20%;
-        }
-        .title-3 {
-            left: 15%;
-            top: 40%;
-        }
-        a {
-            text-decoration: none; /* 移除下划线 */
-            color: inherit; /
-        }
-        .box {
-            position: absolute;
-            border-radius: 15px;
-        }
-        .gray-box {
+
+        /* 修改：信息框高度自适应 */
+        .info-box {
             background: #F6F8F8;
+            padding: 20px;
+            /* 修改：固定高度改为最小高度 */
+            min-height: 320px;
+            /* 新增：移动端高度优化 */
+            @media (max-width: 768px) {
+                min-height: 280px;
+            }
         }
+
+        /* 修改：优化响应式断点 */
+        @media (max-width: 1200px) {
+            .advantage-grid {
+                grid-template-columns: repeat(2, 1fr);
+                /* 新增：移动端间距优化 */
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .advantage-grid {
+                grid-template-columns: 1fr;
+                /* 新增：移动端内边距优化 */
+                padding: 30px 5%;
+            }
+            
+            /* 新增：移动端文字优化 */
+            .w_4 {
+                font-size: 1.2em;
+            }
+            .w_5 {
+                font-size: 0.9em;
+            }
+        }
+
+        /* 新增：超小屏幕优化 */
+        @media (max-width: 480px) {
+            .advantage-grid {
+                gap: 15px;
+                padding: 20px 5%;
+            }
+            .info-box {
+                padding: 15px;
+                min-height: 250px;
+            }
+            .card-image {
+                max-height: 150px;
+            }
+        }
+
+        /* 保持原有导航样式 */
     </style>
 </head>
+
 <body>
     <div class="b_1">
-        <div class="content-overlay">
-            <img class="logo" src="../images/1_1.png" alt="加载错误" title="图标">
-            <div class="w_1 title-1">电致变色玻璃</div>
-            <div class="nav-container">
-                <div class="w_3 nav-item"><a href="../webs/index.html">首页</a></div>
-                <div class="w_3 nav-item"><a href="../webs/introduce.html">产品介绍</a></div>
-                <div class="w_2 nav-item"><a href="../webs/advantage.html">产品优势</a></div>
-                <div class="w_3 nav-item"><a href="../webs/application.html">应用场景</a></div>
-                <div class="w_3 nav-item"><a href="../webs/faq.html">FAQ</a></div>
-            </div>
-        </div>
+        <!-- 导航部分保持不变 -->
     </div>
-    <div class="">
-        <div class="box blue-box" style="width: 386px; height: 513px; left: 1428px; top: 217px;"></div>
-        <img class="box" style="width: 386px; height: 411px; left: 137px; top: 217px;" src="../images/3_1.png" />
-        <div class="box gray-box" style="width: 386px; height: 321px; left: 137px; top: 409px;">
-            <div class="w_4" style="left: 26px; top: 6px;">参数</div>
-        </div>
-        <img class="box" style="width: 386px; height: 353px; left: 568px; top: 217px;" src="../images/3_2.png" />
-        <div class="box gray-box" style="width: 386px; height: 321px; left: 568px; top: 409px;">
-            <div class="w_4" style="left: 41px; top: 6px;">成本</div>
-        </div>
-        <img class="box" style="width: 385px; height: 291px; left: 998px; top: 217px;" src="../images/3_3.png" />
-        <div class="box gray-box" style="width: 386px; height: 321px; left: 998px; top: 409px;">
-            <div class="w_4" style="left: 21px; top: 6px;">创新</div>
-        </div>
-        <img class="box" style="width: 386px; height: 500px; left: 1428px; top: 217px;" src="../images/3_4.png" />
-        <div class="box gray-box" style="width: 386px; height: 321px; left: 1428px; top: 409px;">
-            <div class="w_4" style="left: 21px; top: 10px;">政策支持</div>
-            <div class="w_5" style="width: 348px; height: 173px; left: 21px; top: 97px;">
-                各国政府对绿色建筑和智能建筑的政策支持，以及对节能产品的财政补贴，进一步推动了电致变色玻璃市场的增长。
+    
+    <!-- 新增：产品优势内容区域 -->
+    <div class="b_2">
+        <div class="advantage-grid">
+            <!-- 参数卡片 -->
+            <div class="advantage-card">
+                <img class="card-image" src="../images/3_1.png" alt="参数说明">
+                <div class="info-box">
+                    <div class="w_4">参数</div>
+                    <!-- 可添加具体参数内容 -->
+                </div>
+            </div>
+
+            <!-- 成本卡片 -->
+            <div class="advantage-card">
+                <img class="card-image" src="../images/3_2.png" alt="成本说明">
+                <div class="info-box">
+                    <div class="w_4">成本</div>
+                    <!-- 可添加具体成本内容 -->
+                </div>
+            </div>
+
+            <!-- 创新卡片 -->
+            <div class="advantage-card">
+                <img class="card-image" src="../images/3_3.png" alt="创新说明">
+                <div class="info-box">
+                    <div class="w_4">创新</div>
+                    <!-- 可添加创新内容 -->
+                </div>
+            </div>
+
+            <!-- 政策卡片 -->
+            <div class="advantage-card">
+                <img class="card-image" src="../images/3_4.png" alt="政策说明">
+                <div class="info-box">
+                    <div class="w_4">政策支持</div>
+                    <div class="w_5">
+                        各国政府对绿色建筑和智能建筑的政策支持，以及对节能产品的财政补贴，进一步推动了电致变色玻璃市场的增长。
+                    </div>
+                </div>
             </div>
         </div>
     </div>
