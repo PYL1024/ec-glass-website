@@ -13,27 +13,27 @@
             padding: 40px 5%;
             max-width: 1600px;
             margin: 0 auto;
-            /* 新增：保证最小宽度 */
+            /* 保证最小宽度 */
             min-width: 320px;
         }
 
-        /* 新增：图片容器自适应 */
+        /* 图片容器自适应 */
         .card-image {
             width: 100%;
             height: auto;
-            /* 新增：保持图片比例 */
+            /*保持图片比例 */
             object-fit: cover;
-            /* 新增：移动端高度优化 */
+            /*移动端高度优化 */
             max-height: 200px;
         }
 
-        /* 修改：信息框高度自适应 */
+        /*信息框高度自适应 */
         .info-box {
             background: #F6F8F8;
             padding: 20px;
-            /* 修改：固定高度改为最小高度 */
+            /*固定高度改为最小高度 */
             min-height: 320px;
-            /* 新增：移动端高度优化 */
+            /*移动端高度优化 */
             @media (max-width: 768px) {
                 min-height: 280px;
             }
@@ -43,7 +43,7 @@
         @media (max-width: 1200px) {
             .advantage-grid {
                 grid-template-columns: repeat(2, 1fr);
-                /* 新增：移动端间距优化 */
+                /*移动端间距优化 */
                 gap: 20px;
             }
         }
@@ -51,7 +51,7 @@
         @media (max-width: 768px) {
             .advantage-grid {
                 grid-template-columns: 1fr;
-                /* 新增：移动端内边距优化 */
+                /*移动端内边距优化 */
                 padding: 30px 5%;
             }
             
@@ -64,7 +64,7 @@
             }
         }
 
-        /* 超小屏幕优化 */
+        /* 小屏幕*/
         @media (max-width: 480px) {
             .advantage-grid {
                 gap: 15px;
@@ -84,10 +84,16 @@
 </head>
 <body>
     <div class="b_1">
-        <!-- 导航部分保持不变 -->
+        <div class="nav-container">
+                <div class="w_3 nav-item"><a href="../webs/index.html">首页</a></div>
+                <div class="w_3 nav-item"><a href="../webs/introduce.html">产品介绍</a></div>
+                <div class="w_2 nav-item"><a href="../webs/advantage.html">产品优势</a></div>
+                <div class="w_3 nav-item"><a href="../webs/application.html">应用场景</a></div>
+                <div class="w_3 nav-item"><a href="../webs/faq.html">FAQ</a></div>
+            </div>
     </div>
     
-    <!-- 新增：产品优势内容区域 -->
+    <!产品优势内容区域>
     <div class="b_2">
         <div class="advantage-grid">
             <!-- 参数卡片 -->
